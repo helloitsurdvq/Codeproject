@@ -1,4 +1,3 @@
-
 close all;
 clear all;
 clc
@@ -16,7 +15,6 @@ k_B = 1.3806503e-23;              % Boltzmann constant
 NF=10^(2.278/10);                 % Noise Figure of the UT in linear scale
 sigma = k_B*((NF-1)*Tref + T)*BW_with_RO;    % Noise Power per User
 
-
 N = 7; %Number of transmit antennas
 K = 7; %Number of users
 
@@ -25,11 +23,8 @@ Rmin_table = 0.2:0.2:2.4;
 %Number of realizations in the Monte Carlo simulations
 nbrOfMonteCarloRealizations = 200; %100;
 
-
-
 PdB = 14.9202;
 P = 10.^(PdB/10)*7; %Linear scale
-
 
 %% Channel creating
 % % Radius = 100;
@@ -101,7 +96,6 @@ for Rmin = Rmin_table
             sumrates1(m,:) = sum(rates);
             powerAllocation1(m,:) = powerAllocationwZFBF;
             
-            
             %% Step 2: Processing:
             %% tinh PQ
             Q = abs(H*wZFBF).^2;
@@ -130,7 +124,6 @@ for Rmin = Rmin_table
                     rates_maxQ(m,:) = rates_maxQ_temp;
                     sumrates_maxQ(m) = sum(rates_maxQ(m,:));
                     powerAllocation_maxQ(m,:) = powerAllocationwZFBF_maxQ;
-
 
                     %
                     powerAllocationwZFBF_final = Pmin + powerAllocationwZFBF_left;
@@ -179,14 +172,9 @@ for Rmin = Rmin_table
                 powerAllocation3(m,:) = powerAllocation1(m,:);
             end
         end
-      
-    
-    
-    
-    
+
     filename=['Results/Rmin_ZF_trueSRM_',num2str(Rmin),'_200Samples_PQ.mat'];
 %   save(filename,'rates0','rates1','rates2','rates3','sumrates0','sumrates1','sumrates2','sumrates3','powerAllocation0','powerAllocation1','powerAllocation2','powerAllocation3','rates_maxQ','sumrates_maxQ','powerAllocation_maxQ')
 end
 
 disp('Finish')
-
