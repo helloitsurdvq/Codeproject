@@ -1,5 +1,3 @@
-    
-
 close all
 clear
 clc
@@ -133,7 +131,6 @@ xlabel('QoS requirement [Mbps]')
 ylabel('Probility of satisfied demand-based constraints')
 lgd = legend;
 lgd.NumColumns = 2;
-
 
 %%
 figure(2)
