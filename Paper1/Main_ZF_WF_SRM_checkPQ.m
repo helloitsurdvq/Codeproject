@@ -8,7 +8,7 @@ rng('shuffle');
 BW=500e6;                         % Bandwidth user link [Hz]
 BW_Margin=10;                     % in [%]
 Useful_BW=BW*(1-BW_Margin/100);   % Useful Bandwidth [Hz]
-rolloff = 5/100;                 % Roll-off of the shaping filter, latest value is 5%
+rolloff = 5/100;                  % Roll-off of the shaping filter, latest value is 5%
 BW_with_RO = Useful_BW/(1+rolloff);
 T=50;                             % Noise temperature at the antenna, 50 degree Kelvin
 Tref=290;                         % Reference Temperature 290 degree kelvin
@@ -73,7 +73,7 @@ rates_maxQ = zeros(nbrOfMonteCarloRealizations,K);
 sumrates_maxQ = zeros(nbrOfMonteCarloRealizations,1);
 powerAllocation_maxQ = zeros(nbrOfMonteCarloRealizations,K);
 
-% kenh 122,200 dang co van de
+% problem with 122th, 200th channel
 %% Go through all channel realizations
 for Rmin = Rmin_table
     for m =  1 :nbrOfMonteCarloRealizations
@@ -185,7 +185,7 @@ for Rmin = Rmin_table
     
     
     filename=['Results/Rmin_ZF_trueSRM_',num2str(Rmin),'_200Samples_PQ.mat'];
-%     save(filename,'rates0','rates1','rates2','rates3','sumrates0','sumrates1','sumrates2','sumrates3','powerAllocation0','powerAllocation1','powerAllocation2','powerAllocation3','rates_maxQ','sumrates_maxQ','powerAllocation_maxQ')
+%   save(filename,'rates0','rates1','rates2','rates3','sumrates0','sumrates1','sumrates2','sumrates3','powerAllocation0','powerAllocation1','powerAllocation2','powerAllocation3','rates_maxQ','sumrates_maxQ','powerAllocation_maxQ')
 end
 
 disp('Finish')
