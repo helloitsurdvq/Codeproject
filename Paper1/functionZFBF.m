@@ -4,8 +4,8 @@ function wZFBF = functionZFBF(H)
 %
 %The references to definitions and equations refer to the following book:
 %
-%Emil Bjˆrnson, Eduard Jorswieck, ìOptimal Resource Allocation in
-%Coordinated Multi-Cell Systems,î Foundations and Trends in Communications
+%Emil Bj√∂rnson, Eduard Jorswieck, ‚ÄúOptimal Resource Allocation in
+%Coordinated Multi-Cell Systems,‚Äù Foundations and Trends in Communications
 %and Information Theory, vol. 9, no. 2-3, pp. 113-381, 2013.
 %
 %This is version 1.1. (Last edited: 2014-03-26)
@@ -22,9 +22,6 @@ function wZFBF = functionZFBF(H)
 %
 %OUTPUT:
 %wZFBF = Kt*Nt x Kr matrix with normalized ZFBF
-
-
-
 
 %Number of users
 Kr = size(H,1);
