@@ -29,14 +29,11 @@ function powerallocation = functionHeuristicPowerAllocation(rhos,q,weights)
 %                  Element (j,k) is the power allocated at j:th base
 %                  station for transmission to user k
 
-
 Kt = size(rhos,1); %Number of base stations (BSs)
 Kr = size(rhos,2); %Number of users (in total)
 
-
 %Pre-allocation of matrix for power allocation coefficients
 powerallocation=size(Kt,Kr);
-
 
 %Iteration over base stations to perform power allocation
 for j = 1:Kt
@@ -69,7 +66,6 @@ for j = 1:Kt
     powerallocation(j,:) = q(j)*powerallocation(j,:)/sum(powerallocation(j,:));
 end
 
-
 function difference = functionAllocDiff(nu,q,rhos,weights)
 %Computes the power allocation of (3.37) for a given waterlevel and returns
 %the absolute difference between the total allocated power and the total
@@ -83,5 +79,4 @@ function difference = functionAllocDiff(nu,q,rhos,weights)
 %
 %OUTPUT:
 %difference = Absolute difference between allocated and available power
-
 difference = abs( sum( max([nu*weights-1./rhos zeros(size(weights))],[],2) ) - q);
