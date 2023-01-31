@@ -1,4 +1,4 @@
-function powerallocation = functionHeuristicPowerAllocation(rhos,q,weights)
+function powerallocation = functionHeuristicPowerAllocation(rhos, q, weights)
 %Calculates the power allocation in Theorem 3.16 assuming fixed beamforming
 %directions, weighted sum rate maximization, and a total power constraint
 %per base station. This allocation is optimal for coordinated beamforming
@@ -66,7 +66,7 @@ for j = 1:Kt
     powerallocation(j,:) = q(j)*powerallocation(j,:) / sum(powerallocation(j,:));
 end
 
-function difference = functionAllocDiff(nu,q,rhos,weights)
+function difference = functionAllocDiff(nu, q, rhos, weights)
 %Computes the power allocation of (3.37) for a given waterlevel and returns
 %the absolute difference between the total allocated power and the total
 %available power.
@@ -79,4 +79,4 @@ function difference = functionAllocDiff(nu,q,rhos,weights)
 %
 %OUTPUT:
 %difference = Absolute difference between allocated and available power
-difference = abs(sum(max([nu*weights-1./rhos zeros(size(weights))] ,[] ,2)) - q);
+difference = abs(sum(max([nu*weights - 1./rhos zeros(size(weights))], [], 2)) - q);
