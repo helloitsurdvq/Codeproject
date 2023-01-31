@@ -23,14 +23,13 @@ function wZFBF = functionZFBF(H)
 %OUTPUT:
 %wZFBF = Kt*Nt x Kr matrix with normalized ZFBF
 
-%Number of users
-Kr = size(H,1);
+Kr = size(H,1); %Number of users
 %Total number of antennas
 % N = size(H,2);
 
 %If D matrix is not provided, all antennas can transmit to everyone
 if nargin<2
-%     D = repmat( eye(N), [1 1 Kr]);
+%     D = repmat(eye(N), [1 1 Kr]);
 end
 
 %Pre-allocation of MRT beamforming
@@ -38,9 +37,9 @@ wZFBF = zeros(size(H'));
 
 %Computation of ZFBF, based on Definition 3.4
 effectivechannel = H';
-channelinversion = effectivechannel/(effectivechannel'*effectivechannel+1e-6);
+channelinversion = effectivechannel / (effectivechannel'*effectivechannel+1e-6);
 for k = 1:Kr
 %     effectivechannel = (H*D(:,:,k))'; %Effective channels
-%     channelinversion = effectivechannel/(effectivechannel'*effectivechannel); %Compute zero-forcing based on channel inversion
-    wZFBF(:,k) = channelinversion(:,k)/norm(channelinversion(:,k));  %Normalization of zero-forcing direction
+%     channelinversion = effectivechannel / (effectivechannel'*effectivechannel); %Compute zero-forcing based on channel inversion
+    wZFBF(:,k) = channelinversion(:,k) / norm(channelinversion(:,k));  %Normalization of zero-forcing direction
 end
