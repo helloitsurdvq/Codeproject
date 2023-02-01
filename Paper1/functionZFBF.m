@@ -17,7 +17,7 @@ function wZFBF = functionZFBF(H)
 %INPUT:
 %H  = Kr x Kt*Nt matrix with row index for users and column index
 %     transmit antennas
-%D  = Kt*Nt x Kt*Nt x Kr diagonal matrix. Element (j,j,k) is one if j:th
+%D  = Kt*Nt x Kt*Nt x Kr diagonal matrix. Element (j,j,k) is one of j:th
 %     transmit antenna can transmit to user k and zero otherwise
 %
 %OUTPUT:
